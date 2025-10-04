@@ -1,0 +1,30 @@
+/* Custom Bootstrap theme variables */
+:root {
+  --bs-primary: #007bff;
+  --bs-secondary: #6c757d;
+  --bs-success: #28a745;
+  --bs-info: #17a2b8;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  
+  /* Custom variables for your CMS */
+  --cms-sidebar-width: 280px;
+  --cms-header-height: 64px;
+  --cms-border-radius: 8px;
+}
+
+/* Custom utility classes */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--bs-primary) 0%, #0056b3 100%);
+}
+
+.shadow-custom {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* CMS-specific styles */
+.cms-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
