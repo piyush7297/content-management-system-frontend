@@ -1,16 +1,116 @@
-# React + Vite
+# Folder Structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Root
 
-Currently, two official plugins are available:
+```bash
+/src
+├── components/           # Reusable UI components
+│   ├── common/          # Shared/generic components (Button, Input, etc.)
+│   ├── layout/          # Layout components (Header, Sidebar, Footer)
+│   ├── forms/           # Form-related components
+│   └── ui/              # UI-specific components
+├── pages/               # Page-level components (route components)
+├── hooks/               # Custom React hooks
+├── services/            # API calls and external services
+├── utils/               # Utility functions and helpers
+├── constants/           # App constants, enums, configuration
+├── types/               # TypeScript type definitions
+├── assets/              # Static assets (images, icons, fonts)
+├── styles/              # Global styles, themes, CSS modules
+├── store/               # State management (Redux, Zustand, etc.)
+├── lib/                 # Third-party library configurations
+└── App.jsx              # Main App component
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Component Structure
 
-## React Compiler
+```bash
+components/
+├── common/              # Atomic/reusable components
+│   ├── Button/
+│   │   ├── Button.jsx
+│   │   ├── Button.css
+│   │   └── index.js
+│   ├── Input/
+│   ├── Modal/
+│   └── Loading/
+├── layout/              # Layout structure
+│   ├── Header/
+│   ├── Sidebar/
+│   ├── Footer/
+│   └── Layout.jsx
+├── forms/               # Form components
+│   ├── FormField/
+│   ├── FormValidator/
+│   └── CustomForm/
+└── ui/                  # UI-specific components
+    ├── Cards/
+    ├── Tables/
+    └── Charts/
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages/Routes Structure
 
-## Expanding the ESLint configuration
+```bash
+pages/
+├── Home/
+│   ├── Home.jsx
+│   ├── Home.test.jsx
+│   └── components/     # Page-specific components
+├── Dashboard/
+├── Profile/
+├── Settings/
+└── NotFound.jsx
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Business Login
+
+```bash
+services/
+├── api/                 # API integration
+│   ├── auth.js
+│   ├── users.js
+│   └── content.js
+├── storage/             # Local storage, caching
+└── notifications/       # Toast, alerts, etc.
+
+utils/
+├── validation.js
+├── formatting.js
+├── dateUtils.js
+└── constants.js
+
+hooks/
+├── useAuth.js
+├── useApi.js
+├── useLocalStorage.js
+└── useDebounce.js
+```
+
+## Styling Strategy
+
+```bash
+/* Global variables */
+styles/
+├── variables.css      # CSS custom properties
+├── base.css          # Reset, typography
+├── components.css    # Component styles
+└── utilities.css     # Utility classes
+```
+
+## (For Future Reference) Advanced Feature-Based Architecture
+
+```
+src/
+├── features/
+│   ├── auth/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   └── index.js
+│   ├── dashboard/
+│   └── content/
+└── shared/             # Shared across features
+    ├── components/
+    └── utils/
+```
